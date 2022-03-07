@@ -112,7 +112,7 @@ def prot_to_peprec(protein):
     peptides = []
 
     for peptide in cleave(
-        str(protein.seq), expasy_rules["trypsin"], params["missed_cleavages"]
+        str(protein.seq), expasy_rules[params["enzyme"]], params["missed_cleavages"]
     ):
         pep_count += 1
         if validate_peptide(peptide, params["min_peplen"], params["max_peplen"]):
